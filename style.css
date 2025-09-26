@@ -1,0 +1,164 @@
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #f59e0b;
+  --muted: #9aa4b2;
+  --glass: rgba(255,255,255,0.04);
+  --maxw: 1000px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: #e6eef6;
+  overflow-x: hidden;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 36px auto;
+  padding: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Хедер */
+header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  animation: fadeInDown 1s ease;
+}
+.logo {
+  width: 86px; height: 86px; border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), #ef4444);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 24px rgba(14,21,39,0.6);
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+.logo:hover { transform: scale(1.1); }
+.logo h1 { margin: 0; font-size: 22px; line-height: 1; color: #071019; font-weight: 900; }
+.title h2 { margin: 0; font-size: 28px; animation: fadeIn 1.5s; }
+.subtitle { color: var(--muted); margin-top: 6px; }
+
+/* Hero секція */
+.hero {
+  margin-top: 22px; background: var(--card); padding: 18px; border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  display: grid; grid-template-columns: 1fr 320px; gap: 18px;
+  animation: fadeInUp 1.3s;
+}
+.slogan { font-weight: 700; font-size: 18px; }
+
+.motto {
+  background: linear-gradient(90deg, rgba(245,158,11,0.08), rgba(239,68,68,0.04));
+  padding: 12px; border-radius: 10px; margin: 12px 0;
+  animation: pulse 3s infinite;
+}
+.motto p { margin: 4px 0; line-height: 1.35; }
+.actions { margin-top: 12px; }
+.btn {
+  padding: 10px 14px; border-radius: 10px; border: 0;
+  background: var(--accent); color: #071019; font-weight: 600;
+  cursor: pointer; transition: transform 0.2s;
+}
+.btn:hover { transform: scale(1.08); background: #ffb422; }
+
+/* Контакти */
+#contact-info {
+  display: none;
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  animation: fadeIn 0.5s ease;
+}
+
+/* Права колонка */
+.card { background: var(--glass); padding: 12px; border-radius: 12px; }
+.stat strong { font-size: 20px; }
+.good-deed {
+  margin-top: 12px; padding: 10px; border-radius: 10px;
+  background: linear-gradient(180deg, rgba(6,11,20,0.6), rgba(8,14,26,0.3));
+}
+
+/* Футер */
+footer {
+  margin-top: 28px; padding: 18px; border-radius: 10px;
+  background: transparent; color: var(--muted);
+  display: flex; justify-content: space-between; align-items: center;
+  animation: fadeIn 2s;
+}
+
+/* Анімований фон з іскрами */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.13;
+  background-color: transparent;
+
+  background-image:
+    radial-gradient(rgba(255,255,255,0.95) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.35) 1px, transparent 1px);
+
+  background-size: 60px 60px, 120px 120px, 200px 200px;
+  background-position: 0 0, 0 0, 0 0;
+  background-repeat: repeat;
+  will-change: background-position;
+
+  animation: moveStars 60s linear infinite;
+}
+
+@keyframes moveStars {
+  from {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  to {
+    background-position: -800px -400px, -400px -900px, -200px -1400px;
+  }
+}
+
+/* Анімації */
+@keyframes fadeInDown { from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
+@keyframes fadeInUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes pulse {
+  0%   { box-shadow:0 0 0 0 rgba(245,158,11,0.5); }
+  70%  { box-shadow:0 0 0 15px rgba(245,158,11,0); }
+  100% { box-shadow:0 0 0 0 rgba(245,158,11,0); }
+}
+
+/* Неонові заголовки */
+.title h2,
+h3,
+.slogan {
+  color: var(--accent);
+  text-shadow: 0 0 6px rgba(245,158,11,0.9),
+               0 0 12px rgba(245,158,11,0.7),
+               0 0 24px rgba(245,158,11,0.6),
+               0 0 40px rgba(245,158,11,0.5);
+  animation: neonFlicker 2.5s infinite alternate;
+}
+
+@keyframes neonFlicker {
+  0% { opacity: 1; text-shadow: 0 0 8px rgba(245,158,11,1), 0 0 20px rgba(245,158,11,0.9), 0 0 30px rgba(245,158,11,0.7); }
+  5% { opacity: 0.8; text-shadow: 0 0 5px rgba(245,158,11,0.6), 0 0 15px rgba(245,158,11,0.4); }
+  10% { opacity: 1; }
+  25% { opacity: 0.9; }
+  30% { opacity: 0.7; text-shadow: none; }
+  35% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@media (max-width:860px){
+  .hero { grid-template-columns:1fr; }
+  .logo { width:64px; height:64px; }
+  .title h2 { font-size:20px; }
+}

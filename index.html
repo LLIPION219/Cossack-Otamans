@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Офіційна сторінка команди Джура: Козацькі отамани. Наш девіз, гасло та добрі справи.">
+  <meta name="keywords" content="Джура, Козацькі отамани, Команда Джура Козацькі отамани, козаки, виховання, патріотизм">
+  <meta name="author" content="Саша Забарний">
+  <meta name="robots" content="index, follow">
   <title>Козацькі отамани</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -12,17 +16,17 @@
     <header>
       <div class="logo"><h1>⚔️</h1></div>
       <div class="title">
-        <h2 class="neon-title">Козацькі отамани</h2>
+        <h2>Козацькі отамани</h2>
         <div class="subtitle">Воля, відвага, єдність!</div>
       </div>
     </header>
 
     <div class="hero">
       <div class="left">
-        <div class="slogan neon-title">Ройове гасло</div>
+        <div class="slogan">Ройове гасло</div>
         <p>«Воля, відвага, єдність!»</p>
 
-        <h3 class="neon-title">Девіз:</h3>
+        <h3>Девіз:</h3>
         <div class="motto">
           <p>«Душу - Богові,</p>
           <p>Життя - Україні,</p>
@@ -37,19 +41,37 @@
 
         <div class="leader">
           <strong>Ройова:</strong>
-          <p class="leader-name neon-title">Оксана Зальопа</p>
+          <p class="leader-name">Оксана Зальопа</p>
           <p>Завжди веде рій до перемог, натхнення та єдності!</p>
         </div>
       </div>
 
       <div class="right">
-        <div class="card stat">
-          <span>Учасників:</span>
-          <strong>9</strong>
+        <div class="card stat" onclick="toggleMembers()">
+          <div class="stat-header">
+            <span>Учасників: <strong>9</strong></span>
+            <span class="arrow" id="arrow-icon">▼</span>
+          </div>
+          
+          <div id="members-list" class="members-content">
+            <ul class="members-ul">
+              <li><span class="role-orange">Керівник рою:</span> <span class="name-orange-dark">Марія Кравчук</span></li>
+              <li><span class="role-orange">Веб медія:</span> <span class="name-orange-dark">Саша Забарний</span></li>
+              <li><span class="role-orange">Генератор ідей:</span> <span class="name-orange-dark">Дмитро Байдала</span></li>
+              
+              <li style="margin-top: 12px;"><span class="role-green">Учасники:</span></li>
+              <li class="name-green-dark">Саша Беланошко</li>
+              <li class="name-green-dark">Трофім Майборода</li>
+              <li class="name-green-dark">Назар Черняй</li>
+              <li class="name-green-dark">Дмитро Полторацький</li>
+              <li class="name-green-dark">Ксенія Рощектаєва</li>
+            </ul>
+          </div>
         </div>
-        <div class="good-deed">
+
+        <div class="card" style="background: linear-gradient(180deg, rgba(6,11,20,0.6), rgba(8,14,26,0.3));">
           <strong>Добра справа нашого рою</strong>
-          <p>Допомога вуличним котикам: годування, виготовлення тимчасових укриттів та пошук господарів.</p>
+          <p style="font-size: 14px; color: var(--muted); margin-top: 8px;">Допомога вуличним котикам: годування, виготовлення тимчасових укриттів та пошук господарів.</p>
         </div>
       </div>
     </div>

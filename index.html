@@ -3,27 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Офіційна сторінка команди Джура: Козацькі отамани. Наш девіз, гасло та добрі справи.">
-  <meta name="keywords" content="Джура, Козацькі отамани, Команда Джура Козацькі отамани, козаки, виховання, патріотизм">
-  <meta name="author" content="Саша Забарний">
-  <meta name="robots" content="index, follow">
   <title>Козацькі отамани</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="neon-wrapper">
+    <div class="neon-ball ball-blue"></div>
+    <div class="neon-ball ball-pink"></div>
+    <div class="neon-ball ball-blue"></div>
+    <div class="neon-ball ball-pink"></div>
+    <div class="neon-ball ball-blue"></div>
+  </div>
+
   <div class="bg"></div>
   <div class="wrap">
     <header>
-      <div class="logo"><h1>⚔️</h1></div>
+      <div class="logo">
+        <img src="img/Знімок екрана 2026-05-15 103823.png" alt="Лого" class="logo-img">
+      </div>
       <div class="title">
-        <h2>Козацькі отамани</h2>
+        <h2 class="neon-text">Козацькі отамани</h2>
         <div class="subtitle">Воля, відвага, єдність!</div>
       </div>
     </header>
 
     <div class="hero">
       <div class="left">
-        <div class="slogan">Ройове гасло</div>
+        <div class="slogan orange-text neon-text-orange">Ройове гасло</div>
         <p>«Воля, відвага, єдність!»</p>
 
         <h3>Девіз:</h3>
@@ -35,13 +41,13 @@
         </div>
 
         <div class="actions">
-          <button class="btn" onclick="showContact()">📧 Контакти</button>
-          <div id="contact-info">Email: <strong>sanyzabor@gmail.com</strong></div>
+          <button class="btn" onclick="toggleContact()">📧 Контакти</button>
+          <div id="contact-info" class="fade-contact">Email: <strong>sanyzabor@gmail.com</strong></div>
         </div>
 
         <div class="leader">
           <strong>Ройова:</strong>
-          <p class="leader-name">Оксана Зальопа</p>
+          <p class="leader-name neon-text-orange">Оксана Зальопа</p>
           <p>Завжди веде рій до перемог, натхнення та єдності!</p>
         </div>
       </div>
@@ -49,29 +55,29 @@
       <div class="right">
         <div class="card stat" onclick="toggleMembers()">
           <div class="stat-header">
-            <span>Учасників: <strong>9</strong></span>
-            <span class="arrow" id="arrow-icon">▼</span>
+            <span>Учасників: <strong>10</strong> <span class="arrow" id="arrow-icon">▲</span></span>
           </div>
           
           <div id="members-list" class="members-content">
             <ul class="members-ul">
-              <li><span class="role-orange">Керівник рою:</span> <span class="name-orange-dark">Марія Кравчук</span></li>
-              <li><span class="role-orange">Веб медія:</span> <span class="name-orange-dark">Саша Забарний</span></li>
-              <li><span class="role-orange">Генератор ідей:</span> <span class="name-orange-dark">Дмитро Байдала</span></li>
+              <li><span class="role-orange neon-text-orange">Керівник рою:</span> <span class="name-orange-dark">Марія Кравчук</span></li>
+              <li><span class="role-orange neon-text-orange">Веб медія:</span> <span class="name-orange-dark">Саша Забарний</span></li>
+              <li><span class="role-orange neon-text-orange">Генератор ідей:</span> <span class="name-orange-dark">Дмитро Байдала</span></li>
               
-              <li style="margin-top: 12px;"><span class="role-green">Учасники:</span></li>
+              <li style="margin-top: 12px;"><span class="role-green neon-text-green">Учасники:</span></li>
               <li class="name-green-dark">Саша Беланошко</li>
               <li class="name-green-dark">Трофім Майборода</li>
               <li class="name-green-dark">Назар Черняй</li>
               <li class="name-green-dark">Дмитро Полторацький</li>
               <li class="name-green-dark">Ксенія Рощектаєва</li>
+              <li class="name-green-dark">Данило Гутник</li>
             </ul>
           </div>
         </div>
 
-        <div class="card" style="background: linear-gradient(180deg, rgba(6,11,20,0.6), rgba(8,14,26,0.3));">
+        <div class="card glass-card">
           <strong>Добра справа нашого рою</strong>
-          <p style="font-size: 14px; color: var(--muted); margin-top: 8px;">Допомога вуличним котикам: годування, виготовлення тимчасових укриттів та пошук господарів.</p>
+          <p class="muted-text">Допомога вуличним котикам: годування, виготовлення тимчасових укриттів та пошук господарів.</p>
         </div>
       </div>
     </div>
